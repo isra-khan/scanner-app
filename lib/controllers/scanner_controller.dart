@@ -41,7 +41,7 @@ class ScannerController extends GetxController with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     final CameraController? cameraController = controller;
 
-    // If app is inactive (background), dispose camera to free resources
+
     if (state == AppLifecycleState.inactive) {
       isCameraInitialized.value = false; // Explicitly mark as uninitialized
       cameraController?.dispose();
@@ -62,7 +62,7 @@ class ScannerController extends GetxController with WidgetsBindingObserver {
     try {
       cameras = await availableCameras();
       if (cameras.isNotEmpty) {
-        // If we already have a controller, dispose it first and wait
+   
         if (controller != null) {
           await controller!.dispose();
           controller = null; // Clear reference immediately
@@ -74,7 +74,7 @@ class ScannerController extends GetxController with WidgetsBindingObserver {
           enableAudio: false,
         );
 
-        // Initialize the new controller
+  
         await newController.initialize();
 
         // Only assign it if it was successfully initialized
@@ -102,7 +102,7 @@ class ScannerController extends GetxController with WidgetsBindingObserver {
         break;
       case 2:
         currentMode.value = ScanMode.enhance;
-        // Ensure camera is ready for Enhance mode
+  
         if (!isCameraInitialized.value) initializeCamera();
         break;
       case 3:

@@ -14,7 +14,7 @@ class RecognizationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Inject the controller with the image
+ 
     final RecognitionController controller = Get.put(
       RecognitionController(image),
     );
