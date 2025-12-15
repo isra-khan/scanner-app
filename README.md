@@ -1,4 +1,4 @@
-# weatherapp
+# scannerapp
 
 A new Flutter project.
 
